@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class = "d-flex flex-column min-vh-100">
+
+        <nav class="container-fluid" style="padding-top: 5px; padding-bottom: 5px; width: 95%; margin-top: 10px">
+            <div class="row">
+            
+            <div class="col text-center">
+                <a href = "index.html">Home</a>
+            </div>
+            <div class="col text-center">
+                <a href = "COP.html">C.O.P.</a>
+              </div>
+            <div class="col text-center">
+                <a href = "Nakiska.html">Nakiska</a>
+            </div>
+            <div class="col text-center">
+                <a href = "Sunshine.html">Sunshine Village</a>
+            </div>
+            <div class="col text-center">
+                <a>Lake Louise</a>
+            </div>
+            </div>
+        </nav>
+    
+
+        <div class="row d-flex align-items-center justify-content-center flex-grow-1 w-100">
+            <div class=" col d-flex justify-content-center align-items-center ;">
+            <table style="width: 90%;">
+                <thead>
+                    <tr>
+                        <th> Pros </th>
+                        <th> Cons </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="Cell" data-image = "LakeLouise_images/LakeLouise_size.jpg" onclick="highlightCell(this)"> Biggest ski resort in Alberta</td>
+                        <td class="Cell" data-image = "LakeLouise_images/LakeLouise_distance.jpg" onclick="highlightCell(this)"> Farther than other resorts from Calgary</td>
+                    </tr>
+                    <tr>
+                        <td class="Cell" data-image = "LakeLouise_images/LakeLouise_FIS.jpg" onclick="highlightCell(this)"> FIS Alpine Ski World Cup events</td>
+                        <td class="Cell" data-image = "LakeLouise_images/LakeLouise_crowd.jpg" onclick="highlightCell(this)"> Extremely busy on some days </td>
+                    </tr>
+                    <tr>
+                        <td class="Cell" data-image = "LakeLouise_images/LakeLouise_map.jpg" onclick="highlightCell(this)"> Lots of Lifts and multiple lodges </td>
+                        <td class="Cell" data-image = "LakeLouise_images/LakeLouise_cost.jpg" onclick="highlightCell(this)"> More expensive than other resorts </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class = "col d-flex justify-content-center align-items-center">
+            <img id = "imageDisplay" src="LakeLouise_images/LakeLouise_default.jpg" class="img-fluid img-thumbnail"/>
+        </div>
+        </div>
+
+        <ul class = "mountain-list">
+            <li><a href = "COP.html">C.O.P.</a></li>
+            <li><a href = "Nakiska.html">Nakiska</a></li>
+            <li><a href = "Sunshine.html">Sunshine</a></li>
+            <li><a href = "LakeLouise.html">Lake Louise</a></li>    
+        </ul>
+
+        <!-- First eventlistener code is referenced from here: 
+            https://stackoverflow.com/questions/29762362/attempting-to-replace-an-image-in-a-table-on-a-click -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var cells = document.getElementsByClassName("Cell")
+
+                for (var j = 0; j < cells.length; j++)
+                {
+                    var cell = cells[j];
+                    cell.addEventListener("click", function () {
+                        const imagePath = this.getAttribute('data-image');
+                        document.getElementById('imageDisplay').src = imagePath;
+                    })
+                }
+            })
+
+
+
+            function highlightCell(cell) {
+
+                const cells = document.querySelectorAll('.highlight');
+                cells.forEach(c => c.classList.remove('highlight'));
+
+                cell.classList.add('highlight');
+            }
+
+
+        </script>
+
+    </body>
+</html>

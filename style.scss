@@ -1,0 +1,134 @@
+$main-font: 'Montserrat', sans-serif;
+
+
+body {
+    background-color: #a2b2bb;
+    font-family: $main-font;
+}
+
+.no-overflow {
+    overflow: hidden;
+}
+
+
+nav {
+    background-color:rgba(#313031, 0.75);
+    border-radius: 10px;
+}
+
+ a {
+    color: white; 
+    text-decoration: none; 
+
+    &:hover {
+        color: #c4cee0;
+    }
+
+ }
+
+  @media only screen and (max-width: 800px) {
+    nav{
+      display: none;
+    }
+  }
+
+  .mountain-list {
+    display: none;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .mountain-list {
+      display: block;
+      list-style: none;
+  
+      li {
+        font-family: $main-font;
+        font-weight: bold;
+        font-size: 50px; 
+        position: relative;
+        margin-bottom: 20px;
+        padding-left: 60px;
+        color: #ffffff;
+        text-shadow: 
+        -1px -1px 0 #000, /* Top-left shadow */
+        1px -1px 0 #000,  /* Top-right shadow */
+        -1px 1px 0 #000,  /* Bottom-left shadow */
+        1px 1px 0 #000;   /* Bottom-right shadow */
+
+        //ChatGPT was prompted on how to add an image as a dash for a list, the code with some modification was used here.
+        &::before {
+          content: '';
+          display: inline-block;
+          height: 50px;
+          width: 50px;
+          vertical-align: middle;
+          background-image: url(mountain-part-2-svgrepo-com.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  }
+
+  
+  @media only screen and (max-width: 800px) {
+    #heroText{
+      display: none;
+  }
+}
+
+#heroText {
+    font-family: $main-font;
+    font-weight: bold;
+    font-size: 50px; 
+    color: #ffffff;
+    text-shadow: 
+    -1px -1px 0 #000, /* Top-left shadow */
+    1px -1px 0 #000,  /* Top-right shadow */
+    -1px 1px 0 #000,  /* Bottom-left shadow */
+    1px 1px 0 #000;   /* Bottom-right shadow */
+    }
+
+
+$table-border-color: #ddd;
+$table-head-color: #1b1e24;
+$row-bg-color: #e3d9d9;
+$text-color: #a2b2bb;
+    
+// Style for the table and code source: https://codepen.io/alassetter/pen/nBEVJx
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    
+    
+    .grid {
+        padding: 12px;
+        text-align: center;
+        border: 1px solid $table-border-color;
+      }
+    
+    th {    
+        @extend .grid;
+        background-color: $table-head-color;
+        color: $text-color;
+        font-size: 4vw;
+    }
+
+    td {
+        @extend .grid;
+        font-size: 2vw;
+        background-color: $row-bg-color;
+    }
+    
+
+}
+
+.highlight {
+    background: #4E5066;
+    color: #FFFFFF;
+    border-top: 1px solid #22262e;
+}
+
+
